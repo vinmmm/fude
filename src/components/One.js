@@ -12,49 +12,62 @@ import {
   Image
 } from 'react-native';
 
+import api from '../utilities/api';
 
 
+export default class One extends Component {
 
-export default class Home extends Component {
+constructor(props){
+  super(props);
+  this.state = {
+    rovers: [],
+    roverName:''
+    
+  }
+}
 
-constructor() {
-  super();
-  this.state = {name: "Fude"}
+componentWillMount(){
+  api.getRovers().then((res) => {
+    this.setState({
+      rovers: res.rovers,
+      roverName: res.rovers[0].name
+      
+    })
+  });
 }
 
 
   render() {
-    setTimeout(() => {
-      this.setState({name: "Find Food Now!"});
-    }, 5000)
+    
     return (
       <View style={styles.container}>
       <Text style={styles.welcome}>
-      {this.state.name}
+      
       </Text>
        <View style={styles.logo}>
         <Image source={require('../img/logo5.png')} style={{width: 125, height: 101, marginRight: 79}} />
        </View>
         <Text style={styles.welcome}>
-          FUDE! Eat Some: {this.props.moniker}
+          So, your hungry for some {this.props.moniker}
         </Text>
         <Text style={styles.instructions}>
-          Food Truck
+          Here are some trucks serving {this.props.moniker}
         </Text>
         <Text style={styles.instructions}>
-          Find fude now.{'\n'}
-          Do a Cmd+D or a shake for the dev menu
+          Sonoras{'\n'}
+          Current Location: Carrier Park{'\n'}
+          Rover Name: {this.state.roverName}
         </Text>
       </View>
     );
   }
 }
 
-Home.defaultProps = {
+One.defaultProps = {
   moniker: 'Pizza',
 };
 
-Home.propTypes = {
+One.propTypes = {
   moniker: React.PropTypes.string,
 };
 
@@ -63,7 +76,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'darkred',
+    backgroundColor: 'darkblue',
     marginTop: 23,
   },
   welcome: {
@@ -79,4 +92,4 @@ const styles = StyleSheet.create({
   },
 });
 
-module.exports = Home;
+module.exports = One;

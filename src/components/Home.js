@@ -1,3 +1,4 @@
+'use strict';
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -22,24 +23,22 @@ import {
 
 export default class Home extends Component {
 
+
+
+
 state = {
   moniker: '',
 };
 
-constructor() {
-  super();
-  this.state = {name: "Fude"}
-}
+
 
 
   render() {
-    setTimeout(() => {
-      this.setState({name: "Find Some Food Now!"});
-    }, 5000)
+ 
     return (
       <View style={styles.container}>
       <Text style={styles.welcome}>
-      {this.state.name}
+      
       </Text>
        <View style={styles.logo}>
         <Image source={require('../img/logo5.png')} style={{width: 125, height: 101, marginRight: 79}} />
@@ -77,8 +76,7 @@ constructor() {
         </View>
 
         <Text style={styles.instructions}>
-          Find fude now.{'\n'}
-          Do a Cmd+D or a shake for the dev menu
+          
         </Text>
       </View>
     );
@@ -121,8 +119,8 @@ const styles = StyleSheet.create({
     color: 'gold',
   },
   buttonText: {
+    textAlign: 'center',
     color: 'red',
-    marginLeft: 20,
     fontSize: 20,
   }
 });
