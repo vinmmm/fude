@@ -121,6 +121,7 @@ const styles = StyleSheet.create({
     color: 'gold',
   },
   buttonText: {
+    color: 'red',
     marginLeft: 20,
     fontSize: 20,
   }
