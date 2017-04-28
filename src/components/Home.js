@@ -106,12 +106,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
     marginBottom: 5,
-    color: 'white',
+   
   },
   nameInput: {
     padding: 10,
     height: 40,
-    width: 300,
+    width: 271,
     borderWidth: 2,
     backgroundColor: 'blue',
     borderColor: 'black',

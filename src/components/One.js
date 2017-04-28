@@ -50,27 +50,28 @@ componentWillMount(){
         <Text style={styles.welcome}>
           So, your hungry for some {this.props.moniker}
         </Text>
-        <Text style={styles.instructions}>
+        <Text style={styles.trucks}>
           Here are some trucks serving {this.props.moniker}
         </Text>
         <Text style={styles.instructions}>
-          Sonoras{'\n'}
+          Alexy's{'\n'}
           Current Location: Carrier Park{'\n'}
-          Rover Name: {this.state.roverName}
+          Truck Name: {this.state.roverName}
         </Text>
       </View>
     );
   }
 }
-
+/*
 One.defaultProps = {
   moniker: 'Pizza',
 };
-
+*/
+/*
 One.propTypes = {
   moniker: React.PropTypes.string,
 };
-
+*/
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -84,6 +85,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'gold',
     margin: 10,
+  },
+  trucks: {
+    textAlign: 'center',
+    color: 'red',
+    marginBottom: 5,
   },
   instructions: {
     textAlign: 'center',
